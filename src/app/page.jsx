@@ -50,8 +50,8 @@ const Home = async () => {
   let completedFetchFailed = false;
   try {
     const [ongoingResponse, completedResponse] = await Promise.allSettled([
-      fetch(`${apiUrl}/ongoing`),
-      fetch(`${apiUrl}/completed`)
+      fetch(`${apiUrl}/samehadaku/ongoing`),
+      fetch(`${apiUrl}/samehadaku/completed`)
     ]);
     if (ongoingResponse.status === 'fulfilled' && ongoingResponse.value.ok) {
       const resultOnGoing = await ongoingResponse.value.json();
